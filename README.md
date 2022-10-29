@@ -12,12 +12,38 @@
   
 3)  написать на JS функцию, которая на странице заменяет все тестовые поля ввода на кнопки
   ```
+  function replace(){
   let nodes = document.querySelectorAll("input, textarea");
   for (let i = 0; i < nodes.length; i++){
-    if (nodes[i].type === "text" || nodes[i].type === "textarea"){
-      let button = document.createElement("button");
-      nodes[i].replaceWith(button);
+      if (nodes[i].type === "text" || nodes[i].type === "textarea"){
+        let button = document.createElement("button");
+        nodes[i].replaceWith(button);
+      }
     }
   }
   
   ```
+4) написать css правило, которое повернёт все картинки в форме с id=sampleForm на 90 градусов по часовой стрелке
+  ```
+  #sampleForm{
+    transform: rotate(90deg);
+  }
+  ```
+
+5) Написать CSS правило, которое будет обводить все картинки в классе news в рамку при наведении мышю
+  .news:hover{
+    borded-style: solid;
+    border-color: red;
+  }
+
+6)  Jquery ajax запрос на сервлет, ответ от сервлета - объект json, вывести на страницу firstname, lastname, img_url
+7)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
+   let regex = /[^0-9A-Za-z]/;
+   let inputs = document.querySelectorAll("input, textarea");
+   for (let i = 0; i < inputs.length; i++){
+      if (inputs[i].type === "text" || inputs[i].type === "textarea"){
+          inputs[i].oninput = function(){
+            this.value = this.value.replace(regex, "");
+          }
+      }
+   }
