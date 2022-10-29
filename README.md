@@ -109,6 +109,7 @@
 13) Написать конфигурацию сервлета (org.xxx.MyServlet) с помощью аннотации. Сервлет должен принимать все запросы от файлов .html .xhtml
   ```
   @WebServlet(name="MyServlet", value="/my-servlet", urlPatters = {"*.html","*.xhtml"})
+  ```
 14) сервлет перенаправляющий все запросы на страницу google
   ```
   class ToGoogleServlet extends HttpServlet{
