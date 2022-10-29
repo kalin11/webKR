@@ -49,3 +49,25 @@
       }
    }
    ```
+8) Реализовать функцию на JavaScript, которая будет закрывать текущее окно, если в нем открыт https://www.google.ru
+  ```
+  function closeGoogle(){
+    let link = document.URL;
+    if (link === "https://www.google.ru"){
+      window.close();
+    }
+  }
+  ```
+9) Написать js функцию, которая заменяет содержимое <div> с именем класса “nyan” на изображение по ссылке:
+  ```
+  function replace(){
+    let img = document.createElement('img');
+    img.src = 'http://www.example.com/nyancat.gif';
+    let divs = docuemnt.querySelectorAll(".nyan");
+    for (let i = 0; i < divs.length; i++){
+      divs[i].innerHTML = '';
+      divs[i].appendChild(img);                              
+    }
+  }
+  ```
+10) 
