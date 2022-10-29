@@ -70,4 +70,69 @@
     }
   }
   ```
-10) 
+10)  Правило css, меняющее цвет фона на желтый, если ссылка посещена и не лежит в классе “news”
+   ```
+   a:visited:not(.news){
+      color: yellow;                                 
+   }
+    ```
+11) php скрипт, который достаёт из get запроса имя и фамилию и приветствует пользователя, выводя html страницу 
+     ```
+     <?php                                         
+     $name = $_GET['name'];
+     $surname = $_GET['surname']
+     echo "Hello " . $name . " " . $surname; 
+     ?>
+      ```
+12) написать на php класс
+  ```
+    <?php
+
+    class User{
+      private $name;
+      private $surname;
+
+      function __constructor($name, $surname){
+        $this->name = $name;
+        $this->surname = $surname;
+      }
+
+      function info(){
+        return $this->name . " " . $this->surname;
+      }
+    }
+
+    ?>
+  ```
+13) 
+14) сервлет перенаправляющий все запросы на страницу google
+  ```
+  class ToGoogleServlet extends HttpServlet{
+        public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+                response.sendRedirect("http://google.com1;")
+        }
+  }
+  ```
+15) Написать JSP страницу, которая будет возвращать количество сессий, обратившихся к ней за последние 60 секунд и формировать вывод в HTML
+  
+16) Написать сервлет, который принимает из http запроса параметр name и выводит его. Если параметр не обнаружен то вывести Anonymous user
+  ```
+  class HelloServlet extends HttpServlet{
+        public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+  
+                String name = request.getParameter("name");
+                PrintWriter out = response.getWriter();
+ 
+                name = name==null?"Anonymous user":name;
+                out.println("<h1>Hello " + name + "</h1>");
+                out.close();
+        }
+  }
+  ```
+17)  Страница JSP, проверяющая есть ли /какой-то параметр/ в запросе и если нету - выводящая сообщение об ошибке
+18) Код фильтра запросов, запрещающий доступ к приложению неавторизированным пользователям(у неавт пол в запросе отсутствует заголовок x-application-user)
+19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
+20) написать css правило, которое при клике на ссылку добавляет ей подчеркивание, всем кроме ссылок в теге h1
+21) Написать php скрипт, формирующий форму для ввода логина и пароля и отправляющий запрос сервису authorize.php с помощью UserAgent. Если пользователь корректный, то скрипт должен редиректить на страницу pagename.php.
+22)  Написать html страницу и сервлет, возвращающий странице количество активных сессий
+23)  с помощью jquery посчитать количество div с классом lecture содержащие «де-факто»
