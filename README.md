@@ -9,7 +9,65 @@
   login=root&password=root
   ```
 2) Написать код HTML-страницы, отправляющей номер вопроса и выбранный вариант ответа (латинская буква от “A” до “F”) после получения некоего текста.
+
+  ```
+  <!DOCTYPE html>
+<html lang="en">
+<head onload="getData()">
+    <meta charset="UTF-8">
+</head>
+
+<form action="test.php" method="get">
+<ol>
+    <li>
+        <label for="first" id="firstQ">first question</label>
+        <select name="1" id="first">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+        </select>
+
+
+    </li>
+    <li>
+        <label for="second">second question</label>
+        <select name="2" id="second">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+        </select>
+    </li>
+    <li>
+        <label for="third">third question</label>
+        <select name="3" id="third">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+        </select>
+    </li>
+</ol>
+    <button type="submit">lets go</button>
+</form>
+<script>
+    function getData(){
+        //тут надо получить информацию с сервера и распихать ее по лейблам, хз как
+    }
+</script>
+</body>
+</html>
   
+  
+  ```
+    
 3)  написать на JS функцию, которая на странице заменяет все тестовые поля ввода на кнопки
   ```
   function replace(){
