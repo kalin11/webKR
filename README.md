@@ -141,6 +141,43 @@
   ```
 18) Код фильтра запросов, запрещающий доступ к приложению неавторизированным пользователям(у неавт пол в запросе отсутствует заголовок x-application-user)
 19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
+```
+   <@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+   <@page import ShoppingItem %>
+   <@page import java.util.Collection %>
+   <jsp:useBean name="managed" class="ShoopingItem" />
+   <html>
+      <head>
+        <meta charset="UTF-8">
+     </head>
+     <body>
+       <table>
+          <thead>
+             <tr>
+                <th>
+                  name
+                </th>
+                <th>
+                  price
+                </th>
+                <th>
+                  count
+                </th>
+             </tr>
+          </thead>
+          <% Collection<ShoppingItem> basket = managed.getBasket();
+          for (ShoppingItem current : basket){ %>
+              <tr>
+                <td> <%current.getName()%></td>
+                <td> <%current.getPrice()%></td>
+                <td> <%current.getCount()%></td>
+              </tr>  
+          <%}%>
+       </table
+     </body>
+   </html>
+   
+```    
 20) написать css правило, которое при клике на ссылку добавляет ей подчеркивание, всем кроме ссылок в теге h1
   ```
   a:active:not(h1){
