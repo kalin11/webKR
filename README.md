@@ -141,31 +141,31 @@
   ```
 18) Код фильтра запросов, запрещающий доступ к приложению неавторизированным пользователям(у неавт пол в запросе отсутствует заголовок x-application-user)
     ```
-    public class TestFilter implements Filter {
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        Filter.super.init(filterConfig);
-    }
+   public class TestFilter implements Filter {
+   @Override
+   public void init(FilterConfig filterConfig) throws ServletException {
+       Filter.super.init(filterConfig);
+   }
 
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
-        String auth = request.getHeader("x-application-user");
-        if (auth == null || auth.equals("")){
-            PrintWriter out = servletResponse.getWriter();
-            servletResponse.setContentType("text/html; charset=UTF-8");
-            out.println("you didnt authorize");
-        }
-        else{
-            filterChain.doFilter(servletRequest, servletResponse);
-        }
-    }
+   @Override
+   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+       HttpServletRequest request = (HttpServletRequest) servletRequest;
+       String auth = request.getHeader("x-application-user");
+       if (auth == null || auth.equals("")){
+           PrintWriter out = servletResponse.getWriter();
+           servletResponse.setContentType("text/html; charset=UTF-8");
+           out.println("you didnt authorize");
+       }
+       else{
+           filterChain.doFilter(servletRequest, servletResponse);
+       }
+   }
 
-    @Override
-    public void destroy() {
-        Filter.super.destroy();
-        }
-    }
+   @Override
+   public void destroy() {
+       Filter.super.destroy();
+       }
+   }
     ```
 19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
 ```
