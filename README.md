@@ -166,7 +166,8 @@
         Filter.super.destroy();
         }
     }
-   ```
+    
+    ```
 19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
 ```
    <@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
