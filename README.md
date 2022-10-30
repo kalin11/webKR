@@ -39,7 +39,22 @@
   ```
 
 6)  Jquery ajax запрос на сервлет, ответ от сервлета - объект json, вывести на страницу firstname, lastname, img_url
-7)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
+```
+$(document).ready(function() {
+  $.ajax({
+    url: "/someServlet",
+    async: true,
+    type: "GET",
+    success: function (response){
+      let data = JSON.parse(response);
+      document.writeln(data.firstName);
+      document.writeln(data.lastName);
+      document.writeln(data.img_url);
+    }
+  })
+})
+```
+8)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
    ```
    let regex = /[^0-9A-Za-z]/;
    let inputs = document.querySelectorAll("input, textarea");
