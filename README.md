@@ -218,6 +218,4 @@
          
          
          $("div.lecture:contains('де-факто')").length;
-         
-         
-         ```
+           ```
