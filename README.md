@@ -356,6 +356,8 @@ public class ListenerServlet extends HttpServlet implements HttpSessionListener{
 }   
 ```
 web.xml и jsp аналогично вопросу про количество активных сессией за последние 60 секунд
+         
+         
 23)  с помощью jquery посчитать количество div с классом lecture содержащие «де-факто»
          ```
          
