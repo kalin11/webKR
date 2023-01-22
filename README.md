@@ -83,7 +83,7 @@
   ```
 4) написать css правило, которое повернёт все картинки в форме с id=sampleForm на 90 градусов по часовой стрелке
   ```
-  #sampleForm{
+  #sampleForm img{
     transform: rotate(90deg);
   }
   ```
@@ -113,16 +113,16 @@ $(document).ready(function() {
 })
 ```
 8)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
-   ```
-   let regex = /[^0-9A-Za-z]/;
-   let inputs = document.querySelectorAll("input, textarea");
-   for (let i = 0; i < inputs.length; i++){
-      if (inputs[i].type === "text" || inputs[i].type === "textarea"){
-          inputs[i].oninput = function(){
-            this.value = this.value.replace(regex, "");
-          }
-      }
+```
+let regex = /[^0-9A-Za-z]/;
+let inputs = document.querySelectorAll("input, textarea");
+for (let i = 0; i < inputs.length; i++){
+   if (inputs[i].type === "text" || inputs[i].type === "textarea"){
+       inputs[i].oninput = function(){
+       this.value = this.value.replace(regex, "");
+     }
    }
+}
    ```
 8) Реализовать функцию на JavaScript, которая будет закрывать текущее окно, если в нем открыт https://www.google.ru
   ```
