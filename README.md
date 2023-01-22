@@ -228,7 +228,13 @@ web.xml
   <listener-class>SecondsListener</listener-class>
 </listener>
                                                       
-```                                                     
+``` 
+jsp
+```
+  <%
+    out.println(request.getServletContext().getAttribute("count")); 
+  %>  
+``` 
   
 16) Написать сервлет, который принимает из http запроса параметр name и выводит его. Если параметр не обнаружен то вывести Anonymous user
   ```
