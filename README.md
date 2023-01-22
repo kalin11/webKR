@@ -190,6 +190,45 @@ for (let i = 0; i < inputs.length; i++){
   }
   ```
 15) Написать JSP страницу, которая будет возвращать количество сессий, обратившихся к ней за последние 60 секунд и формировать вывод в HTML
+```
+@WebServlet(name = "seconds", value = "/seconds")
+public class SecondsListener extends HttpServlet implements HttpSessionListener {
+    private static List<Long> list = new ArrayList<>();
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se){
+        list.add(System.currentTimeMillis());
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se){
+
+    }
+
+    public long getCount(){
+        return list.stream().filter(time -> System.currentTimeMillis() - time <= 60 * 1000).count();
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        ServletContext context = request.getServletContext();
+
+        context.setAttribute("count", getCount());
+
+        request.getRequestDispatcher("/test.jsp").forward(request, response);
+
+    }
+
+}
+  
+```
+web.xml                                                      
+```    
+<listener>
+  <listener-class>SecondsListener</listener-class>
+</listener>
+                                                      
+```                                                     
   
 16) Написать сервлет, который принимает из http запроса параметр name и выводит его. Если параметр не обнаружен то вывести Anonymous user
   ```
