@@ -219,7 +219,6 @@ public class TestFilter implements Filter {
 public void init(FilterConfig filterConfig) throws ServletException {
     Filter.super.init(filterConfig);
 }
-
 @Override
 public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
     HttpServletRequest request = (HttpServletRequest) servletRequest;
@@ -238,8 +237,8 @@ public void destroy() {
     Filter.super.destroy();
   }
 }
+```
     
-    ```
 19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
 ```
    <@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
