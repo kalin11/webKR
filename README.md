@@ -327,6 +327,34 @@ public void destroy() {
   }
   ```
 21) Написать php скрипт, формирующий форму для ввода логина и пароля и отправляющий запрос сервису authorize.php с помощью UserAgent. Если пользователь корректный, то скрипт должен редиректить на страницу pagename.php.
+
+**html**
+
+```
+<form method="POST" onsubmit="authorize.php">
+  <input id="login" type="text"/>
+  <input id="password" type="text"/>
+  <button type="submit">send</button>
+</form>
+```
+
+**js**
+```
+function send() {
+  let login = document.getElementById("login");
+  let password = document.getElementById("password");
+  request.post("authorize.php")
+  .send({login, password})
+  .then(res => {
+    location.href = "pagename.php"
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+```
+
+
 22)  Написать html страницу и сервлет, возвращающий странице количество активных сессий
 ```
 @WebServlet(name = "listener", value = "/listener")
