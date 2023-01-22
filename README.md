@@ -328,6 +328,34 @@ public void destroy() {
   ```
 21) Написать php скрипт, формирующий форму для ввода логина и пароля и отправляющий запрос сервису authorize.php с помощью UserAgent. Если пользователь корректный, то скрипт должен редиректить на страницу pagename.php.
 22)  Написать html страницу и сервлет, возвращающий странице количество активных сессий
+```
+@WebServlet(name = "listener", value = "/listener")
+public class ListenerServlet extends HttpServlet implements HttpSessionListener{
+    private static int counter;
+
+    public void sessionCreated(HttpSessionEvent se) {
+        counter++;
+    }
+
+    public void sessionDestroyed(HttpSessionEvent se) {
+        counter--;
+    }
+
+    public int getCounter(){
+        return counter;
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        ServletContext context = request.getServletContext();
+
+        context.setAttribute("sessions", counter);
+
+        request.getRequestDispatcher("/test.jsp").forward(request, response);
+    }
+}   
+```
+web.xml и jsp аналогично вопросу про количество активных сессией за последние 60 секунд
 23)  с помощью jquery посчитать количество div с классом lecture содержащие «де-факто»
          ```
          
