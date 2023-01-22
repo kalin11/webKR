@@ -17,9 +17,10 @@
     <meta charset="UTF-8">
 </head>
 
-<form action="test.php" method="get">
+<form action="test.php" method="POST">
 <ol>
     <li>
+        <input type="hidden" value=1/>
         <label for="first" id="firstQ">first question</label>
         <select name="1" id="first">
             <option>A</option>
@@ -33,6 +34,7 @@
 
     </li>
     <li>
+        <input type="hidden" value=2/>
         <label for="second">second question</label>
         <select name="2" id="second">
             <option>A</option>
@@ -44,6 +46,7 @@
         </select>
     </li>
     <li>
+        <input type="hidden" value=3/>
         <label for="third">third question</label>
         <select name="3" id="third">
             <option>A</option>
@@ -57,11 +60,6 @@
 </ol>
     <button type="submit">lets go</button>
 </form>
-<script>
-    function getData(){
-        //тут надо получить информацию с сервера и распихать ее по лейблам, хз как
-    }
-</script>
 </body>
 </html>
   
