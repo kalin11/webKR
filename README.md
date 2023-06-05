@@ -8,7 +8,7 @@
   
   login=root&password=root
   ```
-2) Написать код HTML-страницы, отправляющей номер вопроса и выбранный вариант ответа (латинская буква от “A” до “F”) после получения некоего текста.
+### 2) Написать код HTML-страницы, отправляющей номер вопроса и выбранный вариант ответа (латинская буква от “A” до “F”) после получения некоего текста.
 
   ```
   <!DOCTYPE html>
@@ -66,7 +66,7 @@
   
   ```
     
-3)  написать на JS функцию, которая на странице заменяет все тестовые поля ввода на кнопки
+### 3)  написать на JS функцию, которая на странице заменяет все тестовые поля ввода на кнопки
   ```
   function replace(){
   let nodes = document.querySelectorAll("input, textarea");
@@ -79,14 +79,14 @@
   }
   
   ```
-4) написать css правило, которое повернёт все картинки в форме с id=sampleForm на 90 градусов по часовой стрелке
+### 4) написать css правило, которое повернёт все картинки в форме с id=sampleForm на 90 градусов по часовой стрелке
   ```
   #sampleForm img{
     transform: rotate(90deg);
   }
   ```
 
-5) Написать CSS правило, которое будет обводить все картинки в классе news в рамку при наведении мышю
+### 5) Написать CSS правило, которое будет обводить все картинки в классе news в рамку при наведении мышю
 ```
   .news:hover{
     borded-style: solid;
@@ -94,7 +94,7 @@
   }
   ```
 
-6)  Jquery ajax запрос на сервлет, ответ от сервлета - объект json, вывести на страницу firstname, lastname, img_url
+### 6)  Jquery ajax запрос на сервлет, ответ от сервлета - объект json, вывести на страницу firstname, lastname, img_url
 ```
 $(document).ready(function() {
   $.ajax({
@@ -110,7 +110,7 @@ $(document).ready(function() {
   })
 })
 ```
-8)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
+### 7)  Написать JS-функцию, которая запрещает вводить любые символы, кроме цифр и букв латинского алфавита
 ```
 let regex = /[^0-9A-Za-z]/;
 let inputs = document.querySelectorAll("input, textarea");
@@ -122,7 +122,7 @@ for (let i = 0; i < inputs.length; i++){
    }
 }
    ```
-8) Реализовать функцию на JavaScript, которая будет закрывать текущее окно, если в нем открыт https://www.google.ru
+### 8) Реализовать функцию на JavaScript, которая будет закрывать текущее окно, если в нем открыт https://www.google.ru
   ```
   function closeGoogle(){
     let link = document.URL;
@@ -131,7 +131,7 @@ for (let i = 0; i < inputs.length; i++){
     }
   }
   ```
-9) Написать js функцию, которая заменяет содержимое <div> с именем класса “nyan” на изображение по ссылке:
+### 9) Написать js функцию, которая заменяет содержимое <div> с именем класса “nyan” на изображение по ссылке:
   ```
   function replace(){
     let img = document.createElement('img');
@@ -143,13 +143,13 @@ for (let i = 0; i < inputs.length; i++){
     }
   }
   ```
-10)  Правило css, меняющее цвет фона на желтый, если ссылка посещена и не лежит в классе “news”
+### 10)  Правило css, меняющее цвет фона на желтый, если ссылка посещена и не лежит в классе “news”
    ```
    a:visited:not(.news){
       color: yellow;                                 
    }
    ```
-11) php скрипт, который достаёт из get запроса имя и фамилию и приветствует пользователя, выводя html страницу 
+### 11) php скрипт, который достаёт из get запроса имя и фамилию и приветствует пользователя, выводя html страницу 
   ```
    <?php                                         
    $name = $_GET['name'];
@@ -157,7 +157,7 @@ for (let i = 0; i < inputs.length; i++){
    echo "Hello " . $name . " " . $surname; 
    ?>
   ```
-12) написать на php класс
+### 12) написать на php класс
   ```
     <?php
 
@@ -177,11 +177,11 @@ for (let i = 0; i < inputs.length; i++){
 
     ?>
   ```
-13) Написать конфигурацию сервлета (org.xxx.MyServlet) с помощью аннотации. Сервлет должен принимать все запросы от файлов .html .xhtml
+### 13) Написать конфигурацию сервлета (org.xxx.MyServlet) с помощью аннотации. Сервлет должен принимать все запросы от файлов .html .xhtml
   ```
   @WebServlet(name="MyServlet", value="/my-servlet", urlPatters = {"*.html","*.xhtml"})
   ```
-14) сервлет перенаправляющий все запросы на страницу google
+### 14) сервлет перенаправляющий все запросы на страницу google
   ```
   class ToGoogleServlet extends HttpServlet{
         public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -189,7 +189,7 @@ for (let i = 0; i < inputs.length; i++){
         }
   }
   ```
-15) Написать JSP страницу, которая будет возвращать количество сессий, обратившихся к ней за последние 60 секунд и формировать вывод в HTML
+### 15) Написать JSP страницу, которая будет возвращать количество сессий, обратившихся к ней за последние 60 секунд и формировать вывод в HTML
 ```
 @WebServlet(name = "seconds", value = "/seconds")
 public class SecondsListener extends HttpServlet implements HttpSessionListener {
@@ -222,21 +222,21 @@ public class SecondsListener extends HttpServlet implements HttpSessionListener 
 }
   
 ```
-web.xml                                                      
+### web.xml                                                      
 ```    
 <listener>
   <listener-class>SecondsListener</listener-class>
 </listener>
                                                       
 ``` 
-jsp
+### jsp
 ```
   <%
     out.println(request.getServletContext().getAttribute("count")); 
   %>  
 ``` 
   
-16) Написать сервлет, который принимает из http запроса параметр name и выводит его. Если параметр не обнаружен то вывести Anonymous user
+### 16) Написать сервлет, который принимает из http запроса параметр name и выводит его. Если параметр не обнаружен то вывести Anonymous user
   ```
   class HelloServlet extends HttpServlet{
         public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -250,12 +250,12 @@ jsp
         }
   }
   ```
-17)  Страница JSP, проверяющая есть ли /какой-то параметр/ в запросе и если нету - выводящая сообщение об ошибке
+### 17)  Страница JSP, проверяющая есть ли /какой-то параметр/ в запросе и если нету - выводящая сообщение об ошибке
   ```
   <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
   <%= request.getParameter("someParameter") == null ? "400 - you didn't set the Parameter" : request.getParameter("someParameter") %>
   ```
-18) Код фильтра запросов, запрещающий доступ к приложению неавторизированным пользователям(у неавт пол в запросе отсутствует заголовок x-application-user)
+### 18) Код фильтра запросов, запрещающий доступ к приложению неавторизированным пользователям(у неавт пол в запросе отсутствует заголовок x-application-user)
 ```
 public class TestFilter implements Filter {
 @Override
@@ -282,7 +282,7 @@ public void destroy() {
 }
 ```
     
-19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
+### 19)  Код jsp-страницы показывающий содержимое корзины юзера. Содержимое корзины - коллекциия объектов класса ShoppingItem который содержит имя, стоимость и количество заказанного товара - хранится в отдельном managed bean. 
 ```
    <@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
    <@page import ShoppingItem %>
@@ -320,13 +320,13 @@ public void destroy() {
    </html>
    
 ```    
-20) написать css правило, которое при клике на ссылку добавляет ей подчеркивание, всем кроме ссылок в теге h1
+### 20) написать css правило, которое при клике на ссылку добавляет ей подчеркивание, всем кроме ссылок в теге h1
   ```
   a:active:not(h1){
     text-decoration-line: underline;
   }
   ```
-21) Написать php скрипт, формирующий форму для ввода логина и пароля и отправляющий запрос сервису authorize.php с помощью UserAgent. Если пользователь корректный, то скрипт должен редиректить на страницу pagename.php.
+### 21) Написать php скрипт, формирующий форму для ввода логина и пароля и отправляющий запрос сервису authorize.php с помощью UserAgent. Если пользователь корректный, то скрипт должен редиректить на страницу pagename.php.
 
 **html**
 
@@ -355,7 +355,7 @@ function send() {
 ```
 
 
-22)  Написать html страницу и сервлет, возвращающий странице количество активных сессий
+### 22)  Написать html страницу и сервлет, возвращающий странице количество активных сессий
 ```
 @WebServlet(name = "listener", value = "/listener")
 public class ListenerServlet extends HttpServlet implements HttpSessionListener{
